@@ -19,10 +19,11 @@
     "rdash-ui": "1.0.*",
     "angular-cookies": "~1.5.0",
     "bootstrap": "~3.3.6",
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "^0.2.15",
+    "bootstrap-vertical-tabs": "^1.2.2"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/shubhamkr17/apnaOPD-WebAPP"
+    "type": "git",
+    "url": "https://github.com/shubhamkr17/apnaOPD-WebAPP"
   }
 }

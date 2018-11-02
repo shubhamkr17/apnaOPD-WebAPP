@@ -33,6 +33,29 @@ function MasterCtrl($scope, $cookieStore) {
         $cookieStore.put('toggle', $scope.toggle);
     };
 
+    $scope.caseSheets = [
+        {
+            "title":"1",
+            "body":"Hi"
+        },
+        {
+            "title":"2",
+            "body":"Hi2"
+        },
+        {
+            "title":"3",
+            "body":"Hi3"
+        },
+        {
+            "title":"4",
+            "body":"Hi4"
+        }
+    ];
+
+    $scope.changeTab = function(tab) {
+        $scope.view_tab = tab;
+    }
+
     window.onresize = function() {
         $scope.$apply();
     };
