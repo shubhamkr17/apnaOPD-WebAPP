@@ -1,6 +1,3 @@
-<div class="header" style="height:60px;background:#2d3e63;margin-bottom:8px">
-
-</div>
 <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
   <div class="col-xs-12">
     <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>

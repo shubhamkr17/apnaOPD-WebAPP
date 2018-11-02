@@ -20,49 +20,26 @@
   <!-- endbuild -->
   <!-- Custom Scripts -->
   <script type="text/javascript" src="js/dashboard.min.js"></script>
+
+  <style>
+  .affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+  </style>
 </head>
 <body ng-controller="MasterCtrl">
-  <div class="header" style="height:60px;background:#2d3e63;padding:8px;">
+  <div class="header" style="height:60px;background:#2d3e63;padding:8px;" data-spy="affix" data-offset-top="197">
     <p style="text-align:center;font-size:24px;color:#fff">ApnaOPD</p>
   </div>
 
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar">
-        <li class="sidebar-main">
-          <a ng-click="toggleSidebar()">
-            ApnaOPD
-            <span class="menu-icon glyphicon glyphicon-transfer"></span>
-          </a>
-        </li>
-        <li class="sidebar-title"><span>NAVIGATION</span></li>
-        <li class="sidebar-list">
-          <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
-        </li>
-        <li class="sidebar-list">
-          <a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>
-        </li>
-      </ul>
-      <div class="sidebar-footer">
-        <div class="col-xs-4">
-          <a href="https://github.com/rdash/rdash-angular" target="_blank">
-            Github
-          </a>
-        </div>
-        <div class="col-xs-4">
-          <a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">
-            About<header>
-          </header>
+    <div id="sidebar-wrapper" style="top: 0">
+      <div ng-include="'templates/sidebar.html'">
 
-          </a>
-        </div>
-        <div class="col-xs-4">
-          <a href="#">
-            Support
-          </a>
-        </div>
       </div>
     </div>
     <!-- End Sidebar -->
