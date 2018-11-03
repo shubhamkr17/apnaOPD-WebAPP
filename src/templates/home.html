@@ -32,7 +32,11 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchDoctor()">
+
+<div class="row">
+  <div class="col-md-9 col-lg-9">
+
+  	<div class="col-lg-4 col-md-6 col-xs-6" ng-click="searchDoctor()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon green pull-left">
@@ -44,7 +48,7 @@
   		</rd-widget>
   	</div>
 
-  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchRetailer()">
+  	<div class="col-lg-4 col-md-6 col-xs-6" ng-click="searchRetailer()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon red pull-left">
@@ -55,7 +59,8 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchMedicine()">
+
+  	<div class="col-lg-4 col-md-6 col-xs-6" ng-click="searchMedicine()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon orange pull-left" >
@@ -66,19 +71,10 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchLocation()">
-  		<rd-widget>
-  			<rd-widget-body>
-  				<div class="widget-icon blue pull-left">
-  					<i class="fa fa-support"></i>
-  				</div>
-  				<div class="title">62</div>
-  				<div class="comment">Locations</div>
-  			</rd-widget-body>
-  		</rd-widget>
-  	</div>
 
-    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showDoctor"id="search_doctor">
+
+
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showDoctor"id="search_doctor" style="margin-top:12px">
       <rd-widget >
   			<rd-widget-body>
 
@@ -95,8 +91,9 @@
                     <img class="img-responsive" src="img/home_pic.jpg" alt="">
                 </div>
                 <div class="col-lg-10 col-md-8 col-xs-12" style="padding:8px;">
-                    <p>Name:{{d.name}}</p>
-                    <p>Department:{{d.department}}</p>
+                    <p>{{d.name}}</p>
+                    <p>{{d.department}}</p>
+                    <p>{{d.address.city}},{{d.address.state}},{{d.address.pincode}}</p>
                 </div>
               </div>
             </div>
@@ -106,7 +103,8 @@
         </rd-widget-body>
       </rd-widget>
     </div>
-    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showRetailer" id="search_retailer">
+
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showRetailer" id="search_retailer" style="margin-top:12px">
       <rd-widget>
   			<rd-widget-body>
           <div class="title">Search Retailer</div>
@@ -133,8 +131,11 @@
           </div>
         </rd-widget-body>
       </rd-widget>
+
     </div>
-    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showMedicine" id="search_medicine">
+
+
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showMedicine" id="search_medicine" style="margin-top:12px">
       <rd-widget>
   			<rd-widget-body>
           <div class="title">Search Medicine</div>
@@ -160,33 +161,20 @@
         </rd-widget-body>
       </rd-widget>
     </div>
-    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showLocation" id="search_location">
+
+  </div>
+
+    <div class="col-lg-3 col-md-3 col-xs-3">
       <rd-widget>
   			<rd-widget-body>
-          <div class="title">Search By location</div>
-          <div class="comment">
-            <input class="form-control" type="text" ng-model="location_query">
-          </div>
-          <div class="doctor_detail_wrapper" style="margin-top:16px;padding:4px 0px;
-          max-height:400px;min-height:400px;overflow-y:auto;border:1px solid black">
-
-            <div class="doctor_detail" ng-repeat="l in locations | filter : location_query">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 col-xs-12">
-                    <img class="img-responsive" src="img/home_pic.jpg" alt="">
-                </div>
-                <div class="col-lg-9 col-md-6 col-xs-12">
-                    <p>Name:{{d.name}}</p>
-                    <p>Department:{{d.department}}</p>
-                </div>
-              </div>
-            </div>
+          <div class="" id="home_ad" style="height:600px">
 
           </div>
         </rd-widget-body>
       </rd-widget>
     </div>
 
-  </div>
+</div>
 
+  </div>
 </div>

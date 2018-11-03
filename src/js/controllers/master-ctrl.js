@@ -61,17 +61,17 @@ function MasterCtrl($scope, $cookieStore,$http) {
       $scope.showLocation=true;
     };
 
-    $http.get("http://172.16.1.47:3000/api/doctors")
+    $http.get("http://localhost:3000/api/doctors")
     .then(function(response){
       console.log(response);
       $scope.doctors=response.data;
     });
-    $http.get("http://172.16.1.47:3000/api/retailers")
+    $http.get("http://localhost:3000/api/retailers")
     .then(function(response){
       console.log(response);
       $scope.retailers=response.data;
     });
-    $http.get("http://172.16.1.47:3000/api/medicines")
+    $http.get("http://localhost:3000/api/medicines")
     .then(function(response){
       console.log(response);
       $scope.medicines=response.data;
