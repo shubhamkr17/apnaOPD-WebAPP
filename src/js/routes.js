@@ -30,6 +30,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('retailer', {
                 url: '/retailer',
                 templateUrl: 'templates/profile_retailer.html'
+            })
+            .state('book_appointment', {
+                url: '/book_appointment',
+                templateUrl: 'templates/book_appointment.html'
             });
     }
 ]);
