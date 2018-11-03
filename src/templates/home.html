@@ -32,7 +32,7 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-12">
+  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchDoctor()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon green pull-left">
@@ -43,7 +43,8 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-12">
+
+  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchRetailer()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon red pull-left">
@@ -54,10 +55,10 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-12">
+  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchMedicine()">
   		<rd-widget>
   			<rd-widget-body>
-  				<div class="widget-icon orange pull-left">
+  				<div class="widget-icon orange pull-left" >
   					<i class="fa fa-sitemap"></i>
   				</div>
   				<div class="title">225</div>
@@ -65,7 +66,7 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
-  	<div class="col-lg-3 col-md-6 col-xs-12">
+  	<div class="col-lg-3 col-md-6 col-xs-6" ng-click="searchLocation()">
   		<rd-widget>
   			<rd-widget-body>
   				<div class="widget-icon blue pull-left">
@@ -76,6 +77,116 @@
   			</rd-widget-body>
   		</rd-widget>
   	</div>
+
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showDoctor"id="search_doctor">
+      <rd-widget >
+  			<rd-widget-body>
+
+          <div class="title">Search Doctor</div>
+          <div class="comment">
+            <input class="form-control" type="text" ng-model="doctor_query">
+          </div>
+          <div class="doctor_detail_wrapper" style="margin-top:16px;padding:4px 0px;
+          max-height:400px;min-height:400px;overflow-y:auto;border:1px solid black">
+
+            <div class="doctor_detail" ng-repeat="d in doctors | filter : doctor_query">
+              <div class="row">
+                <div class="col-lg-2 col-md-4 col-xs-12">
+                    <img class="img-responsive" src="img/home_pic.jpg" alt="">
+                </div>
+                <div class="col-lg-10 col-md-8 col-xs-12" style="padding:8px;">
+                    <p>Name:{{d.name}}</p>
+                    <p>Department:{{d.department}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </rd-widget-body>
+      </rd-widget>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showRetailer" id="search_retailer">
+      <rd-widget>
+  			<rd-widget-body>
+          <div class="title">Search Retailer</div>
+          <div class="comment">
+            <input class="form-control" type="text" ng-model="retailer_query">
+          </div>
+          <div class="doctor_detail_wrapper" style="margin-top:16px;padding:4px 0px;
+          max-height:400px;min-height:400px;overflow-y:auto;border:1px solid black">
+
+            <div class="doctor_detail" ng-repeat="r in retailers | filter : retailer_query">
+              <div class="row">
+                <div class="col-lg-2 col-md-4 col-xs-12">
+                    <img class="img-responsive" src="img/home_pic.jpg" alt="">
+                </div>
+                <div class="col-lg-10 col-md-8 col-xs-12">
+                    <p>Name:{{r.name}}</p>
+                    <!-- <p>Gid:{{r.gid}}</p> -->
+                    <p>Address: {{r.address.city}}, {{r.address.state}} ,{{r.address.pincode}}
+                    </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </rd-widget-body>
+      </rd-widget>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showMedicine" id="search_medicine">
+      <rd-widget>
+  			<rd-widget-body>
+          <div class="title">Search Medicine</div>
+          <div class="comment">
+            <input class="form-control" type="text" ng-model="medicine_query">
+          </div>
+          <div class="doctor_detail_wrapper" style="margin-top:16px;padding:4px 0px;
+          max-height:400px;min-height:400px;overflow-y:auto;border:1px solid black">
+
+            <div class="doctor_detail" ng-repeat="m in medicines | filter : medicine_query">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-xs-12">
+                    <img class="img-responsive" src="img/home_pic.jpg" alt="">
+                </div>
+                <div class="col-lg-9 col-md-6 col-xs-12">
+                    <p>Name:{{m.name}}</p>
+                    <!-- <p>Department:{{d.department}}</p> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </rd-widget-body>
+      </rd-widget>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12" ng-show="showLocation" id="search_location">
+      <rd-widget>
+  			<rd-widget-body>
+          <div class="title">Search By location</div>
+          <div class="comment">
+            <input class="form-control" type="text" ng-model="location_query">
+          </div>
+          <div class="doctor_detail_wrapper" style="margin-top:16px;padding:4px 0px;
+          max-height:400px;min-height:400px;overflow-y:auto;border:1px solid black">
+
+            <div class="doctor_detail" ng-repeat="l in locations | filter : location_query">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-xs-12">
+                    <img class="img-responsive" src="img/home_pic.jpg" alt="">
+                </div>
+                <div class="col-lg-9 col-md-6 col-xs-12">
+                    <p>Name:{{d.name}}</p>
+                    <p>Department:{{d.department}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </rd-widget-body>
+      </rd-widget>
+    </div>
+
   </div>
 
 </div>
